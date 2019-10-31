@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-oct-2019 14:27:57 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="carlosguso.ejercicio.model.Materias" table="materias" catalog="ejercicio" optimistic-lock="version">
+        <id name="identificador" type="int">
+            <column name="identificador" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="profesores" class="carlosguso.ejercicio.model.Profesores" fetch="select">
+            <column name="profesor" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

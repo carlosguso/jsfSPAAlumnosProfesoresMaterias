@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Users/carlosguso/NetBeansProjects/Ejercicio/src/java/carlosguso/ejercicio/model/Profesores.java</file>
+            <file>file:/Users/carlosguso/NetBeansProjects/Ejercicio/src/java/carlosguso/ejercicio/bean/AlumnosBean.java</file>
+            <file>file:/Users/carlosguso/NetBeansProjects/Ejercicio/src/java/carlosguso/ejercicio/bean/ProfesoresBean.java</file>
+            <file>file:/Users/carlosguso/NetBeansProjects/Ejercicio/src/java/carlosguso/ejercicio/dao/MateriaDAO.java</file>
+            <file>file:/Users/carlosguso/NetBeansProjects/Ejercicio/src/java/carlosguso/ejercicio/dao/AlumnoDAO.java</file>
+            <file>file:/Users/carlosguso/NetBeansProjects/Ejercicio/web/index.xhtml</file>
+            <file>file:/Users/carlosguso/NetBeansProjects/Ejercicio/src/java/carlosguso/ejercicio/dao/ProfesorDAO.java</file>
+            <file>file:/Users/carlosguso/NetBeansProjects/Ejercicio/src/java/carlosguso/ejercicio/dao/AlumnoMateriaDAO.java</file>
+            <file>file:/Users/carlosguso/NetBeansProjects/Ejercicio/src/java/carlosguso/ejercicio/bean/TableBean.java</file>
+            <file>file:/Users/carlosguso/NetBeansProjects/Ejercicio/src/java/carlosguso/ejercicio/model/Materias.java</file>
+        </group>
+    </open-files>
+</project-private>

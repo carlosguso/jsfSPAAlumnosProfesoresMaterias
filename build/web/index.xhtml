@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Ejercicio</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:commandButton value="Ver Alumnos" action="#{tableBean.getAlumnos()}">
+                <f:ajax execute="@form" render="dataTable" />
+            </h:commandButton>
+            <h:commandButton value="Ver Profesores" action="#{tableBean.getProfesores()}">
+                <f:ajax execute="@form" render="dataTable" />
+            </h:commandButton>
+        </h:form>
+        <h:commandButton value="Basic" type="button" onclick="PF('dlg1').show();" />
+        <h:dataTable value="#{tableBean.listaProfesores.size() == 0 ? tableBean.listaAlumnos : tableBean.listaProfesores}" var="a"
+    			styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row"
+                        id="dataTable" >
+
+    			<h:column>
+    				<f:facet name="header">Identificador</f:facet>
+    				#{a.identificador}
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Nombre</f:facet>
+    				#{a.nombre}
+    			</h:column>
+            
+                        <h:column>
+                                <f:facet name="header"></f:facet>
+                                <h:form>
+                                    <h:commandButton value="Mostrar más" type="button" action="#{tableBean.getData(a.identificador)}" onclick="setTimeout(function(){ PF('dlg1').show(); }, 500);">
+                                        <f:ajax execute="@form" render="outputtext modal"/>
+                                    </h:commandButton>
+                                </h:form>
+    			</h:column>
+    		
+    		</h:dataTable>
+        <p:dialog header="Datos" widgetVar="dlg1" minHeight="40" id="modal">
+            <h:panelGroup rendered="#{tableBean.alumno == null}">
+                <h:outputText value="ID: #{tableBean.profesor.identificador}"/><br/>
+                <h:outputText value="Nombre: #{tableBean.profesor.nombre}"/><br/>
+                <h:outputText value="Cedula: #{tableBean.profesor.cedula}"/><br/>
+                
+                <h:dataTable value="#{tableBean.mcd}" var="b"
+    			styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row" >
+
+    			<h:column>
+    				<f:facet name="header">Materia:</f:facet>
+    				#{b.nombreMateria}
+    			</h:column>
+                        <h:column>
+                                <f:facet name="header">Alumnos:</f:facet>
+                                #{b.cantidad}
+                        </h:column>
+    		</h:dataTable>
+                
+            </h:panelGroup>
+            <h:panelGroup rendered="#{tableBean.profesor == null}">
+                <h:outputText value="ID: #{tableBean.alumno.identificador}"/><br/>
+                <h:outputText value="Nombre: #{tableBean.alumno.nombre}"/><br/>
+                <h:outputText value="Sexo: #{tableBean.alumno.sexo}"/><br/>
+                <h:outputText value="Edad: #{tableBean.alumno.edad}"/><br/>
+                <hr/>
+                <h:dataTable value="#{tableBean.profesoresAlumnos}" var="b"
+    			styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row" >
+
+    			<h:column>
+    				<f:facet name="header">Nombre</f:facet>
+    				#{b.nombre}
+    			</h:column>
+    		</h:dataTable>
+            </h:panelGroup>
+        </p:dialog>
+        
+    </h:body>
+    
+</html>
+

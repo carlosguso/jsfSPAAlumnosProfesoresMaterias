@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-oct-2019 14:27:57 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="carlosguso.ejercicio.model.Alumnos" table="alumnos" catalog="ejercicio" optimistic-lock="version">
+        <id name="identificador" type="int">
+            <column name="identificador" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="50" />
+        </property>
+        <property name="sexo" type="string">
+            <column name="sexo" length="1" />
+        </property>
+        <property name="edad" type="java.lang.Integer">
+            <column name="edad" />
+        </property>
+    </class>
+</hibernate-mapping>
